@@ -1,0 +1,53 @@
+// fonts
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-Book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CircularStd';
+  src: url('/fonts/CircularStd-Bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+// tailwind
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// global
+
+a {
+  @apply text-accent;
+
+  transition: 0.2s;
+}
+
+em {
+  @apply not-italic font-bold text-red-300;
+}
+
+// components
+
+.button {
+  @apply inline-block bg-accent py-4 px-6 rounded text-white;
+}
+
+.bullet {
+  @apply text-4xl font-semibold bg-black rounded-full h-20 w-20 flex items-center justify-center;
+}

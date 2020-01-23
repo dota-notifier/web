@@ -1,0 +1,5 @@
+{
+  "version": 2,
+  "name": "dota-notifier",
+  "regions": ["dub1", "sfo1"]
+}
