@@ -1,26 +1,31 @@
 import { NextPage } from 'next'
 import React from 'react'
 
-import { img_configure_dota, img_dota, img_ios_notifications } from '../assets'
-
 const Home: NextPage = () => (
   <main>
     <header className="flex items-center p-8 bg-black">
-      <img className="h-20" src={img_dota} alt="Dota Notifier" />
+      <img className="h-20" src="/img/dota.svg" alt="Dota Notifier" />
       <h1 className="text-4xl font-semibold ml-8">Dota Notifier</h1>
     </header>
     <section className="my-4 mt-0 px-8 pb-8 bg-black">
       <p className="text-xl">
-        Get notifications on your phone when a ready check is trigger or a match
-        is ready.
+        Get notifications on your phone when a ready check is triggered or a
+        match is ready.
       </p>
+    </section>
+    <section className="my-12 mt-8 px-8">
+      <h2 className="text-6xl font-semibold mb-8 text-accent">Features</h2>
+      <ul className="text-3xl">
+        <li>Ready check</li>
+        <li>Match found</li>
+      </ul>
     </section>
     <section className="my-12 mt-8 px-8">
       <h2 className="text-6xl font-semibold mb-8 text-accent">Setup</h2>
       <h3 className="bullet">1</h3>
       <p className="text-xl my-4">Download and install the desktop app.</p>
       <a className="button" href="#download">
-        Download
+        Windows
       </a>
     </section>
     <section className="my-12 px-8">
@@ -39,23 +44,37 @@ const Home: NextPage = () => (
       <h3 className="bullet">3</h3>
       <p className="text-xl my-4">Configure Dota 2.</p>
       <p className="my-4 text-xl">
-        Open Dota 2, go to settings, then options, and enable{' '}
-        <em>Bring Dota 2 to front when match found</em> and{' '}
-        <em>Bring Dota 2 to front for Ready Checks</em>.
+        Open Dota 2, go to settings, then options, and enable all{' '}
+        <em>Bring Dota 2 to front</em> settings.
       </p>
-      <a
-        className="block my-4 rounded overflow-hidden"
-        href={img_configure_dota}>
-        <img src={img_configure_dota} alt="Configure Dota" />
+      <a className="block my-4" href="/img/configure_dota.jpg">
+        <img
+          className="rounded"
+          src="/img/configure_dota.jpg"
+          alt="Configure Dota"
+        />
       </a>
     </section>
     <section className="my-12 px-8">
       <h3 className="bullet">4</h3>
       <p className="text-xl my-4">
-        Scan the QR code from the desktop app with the mobile app and you are
-        good to go. Whenever you are stepping away from your computer, just{' '}
-        <em>ALT+TAB</em> out of Dota.
+        Scan the QR code from the desktop app with the mobile app once and you
+        are good to go. Whenever you are stepping away from your computer, just
+        press <em>I&apos;m away</em> on the app.
       </p>
+      <p className="text-xl my-4">
+        You should also press <em>I&apos;m back</em> when you are back else Dota
+        Notifier will keep running in the background. While it does not use a
+        lot of resources, it might impact your computer performance depending on
+        your specs.
+      </p>
+      <a className="block my-4  " href="/img/dota_notifier.png">
+        <img
+          className="w-100"
+          src="/img/dota_notifier.png"
+          alt="Dota Notifier"
+        />
+      </a>
     </section>
     <section className="my-12 border-t-2 border-black px-8">
       <h2 className="text-6xl font-semibold my-8 text-accent">Tips</h2>
@@ -64,36 +83,24 @@ const Home: NextPage = () => (
         Configure iOS notifications to make sure you do not miss anything. The
         app plays the ready check and match ready sounds from Dota!
       </p>
-      <a
-        className="block my-4 rounded overflow-hidden"
-        href={img_ios_notifications}>
-        <img src={img_ios_notifications} alt="Configure iOS notifications" />
+      <a className="block my-4 " href="/img/ios_notifications.jpg">
+        <img
+          className="rounded w-100"
+          src="/img/ios_notifications.jpg"
+          alt="Configure iOS notifications"
+        />
       </a>
-      <h3 className="bullet">2</h3>
-      <p className="text-xl mt-4">
-        If your computer is slow (or fast), you can tweak the delay setting on
-        the desktop client to suit your specs. Try a ready check after you
-        install this app and if it does not work, tweak the setting until you
-        find one that does. For me, 1.5 seconds is the ideal for both ready
-        checks and match ready.
-      </p>
     </section>
     <section className="my-12 border-t-2 border-black px-8">
       <h2 className="text-6xl font-semibold my-8 text-accent">How it works</h2>
       <p className="text-xl my-4">
-        Dota Notifier takes a screenshot of Dota when it comes to the foreground
-        and checks if it has the words <em>READY CHECK</em> or{' '}
-        <em>YOUR GAME IS READY</em> and sends the appropriate notification. If
-        neither of these happen, then you will not get a notification.
+        When you press <em>I&apos;m away</em>, Dota Notifier takes a screenshot
+        of Dota every few seconds and checks it for keywords (ready check, game
+        is ready) and sends the appropriate notification.
       </p>
       <p className="text-xl my-4">
-        Right now, it is only available for English. And requires that you
-        minimize your game before you go away from your computer.
-      </p>
-      <p className="text-xl my-4">
-        In the future, I will add support for more languages (I will need
-        community help for this) and find a way to check for triggers when Dota
-        is in the foreground.
+        Right now, it is only available for English. In the future, I will add
+        support for more languages.
       </p>
     </section>
     <section className="my-12 border-t-2 border-black px-8">
@@ -105,17 +112,25 @@ const Home: NextPage = () => (
         time. This app takes care of that.
       </p>
       <p className="text-xl my-4">
-        Right now, it is only available for English. And requires that you
-        minimize your game before you go away from your computer.
-      </p>
-      <p className="text-xl my-4">
-        In the future, I will add support for more languages (I will need
-        community help for this) and find a way to check for triggers when Dota
-        is in the foreground.
-      </p>
-      <p className="text-xl my-4">
         Dota Notifier is open-source. You can find the code on{' '}
         <a href="https://github.com/dota-notifier">GitHub</a>.
+      </p>
+      <p className="text-xl my-4">
+        I&apos;m Ali Zahid (mildpanda), an{' '}
+        <a
+          href="https://alizahid.dev"
+          target="_blank"
+          rel="noopener noreferrer">
+          app developer
+        </a>{' '}
+        and a{' '}
+        <a
+          href="https://www.dotabuff.com/players/62906711"
+          target="_blank"
+          rel="noopener noreferrer">
+          Dota player
+        </a>
+        .
       </p>
     </section>
   </main>
